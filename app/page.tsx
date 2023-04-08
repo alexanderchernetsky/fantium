@@ -1,102 +1,86 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from './page.module.css'
+import PlanCard from "@/app/PlanCard";
 
-const inter = Inter({ subsets: ['latin'] })
+import styles from './page.module.css';
+
+
+export enum PlanStatuses {
+  Enabled = 'Enabled',
+  Disabled = 'Disabled'
+}
+
+export enum Plans {
+  Bronze = 'Bronze',
+  Silver = 'Silver',
+  Gold = 'Gold'
+}
+
+export interface Perk {
+  image: string,
+  description: string
+}
+
+export interface ICardData {
+  id: string,
+  plan: Plans,
+  image: string,
+  percentageOfOwnership: number,
+  collections_remaining: number,
+  price: number,
+  perks: Perk[],
+  status: PlanStatuses
+}
+
+// todo: fetch from the API
+const mockCards: ICardData[] = [
+  {
+    id: '1',
+    plan: Plans.Bronze,
+    image: 'bronze.png',
+    percentageOfOwnership: 0.0021,
+    collections_remaining: 809,
+    price: 99,
+    perks: [{image: 'diamond.png', description: 'Access to FANtium Discord channel'}],
+    status: PlanStatuses.Enabled
+  },
+  {
+    id: '2',
+    plan: Plans.Silver,
+    image: 'silver.png',
+    percentageOfOwnership: 0.0108,
+    collections_remaining: 100,
+    price: 499,
+    perks: [
+      {image: 'diamond.png', description: 'Early access (allowlist) on the next Thiem NFT drop'},
+      {image: 'hand.png', description: 'Exclusive workout video'}
+    ],
+    status: PlanStatuses.Enabled
+  },
+  {
+    id: '3',
+    plan: Plans.Gold,
+    image: 'gold.png',
+    percentageOfOwnership: 0.2171,
+    collections_remaining: 10,
+    price: 9999,
+    perks: [
+      {image: 'diamond.png', description: 'Meet & greet at one tournament on the ATP tour'},
+      {image: 'hand.png', description: 'Access to a private chat with the'}
+    ],
+    status: PlanStatuses.Enabled
+  }
+]
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      {mockCards.map(card => {
+        return (
+            <div className={styles.plan} key={card.id}>
+              <PlanCard {...card} />
+              <div className={styles.remaining}>{card.collections_remaining}</div>
+            </div>
+        )
+      })}
     </main>
   )
 }

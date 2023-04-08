@@ -1,0 +1,95 @@
+.cardWrapper {
+    background-color: #1A1A1A;
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    height: 744px;
+    margin: 15px;
+}
+
+.topSection {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    align-items: center;
+}
+
+.flexWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    height: 100px;
+    width: 100%;
+    padding: 0 30px;
+}
+
+.planInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+}
+
+.planName {
+    color: #FFFFFF;
+    font-size: 12px;
+}
+
+.percentageOfOwnership {
+    color: #FFFFFF;
+    font-size: 28px;
+    font-weight: 400;
+}
+
+.sectionName {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 20px;
+    color: #FFFFFF;
+    font-size: 14px;
+    opacity: 0.5;
+    width: 50%;
+    height: 100%;
+}
+
+.bottomSection {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px 30px 30px;
+    height: 100%;
+}
+
+.price {
+    width: 100%;
+    color: #BDFF1E;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    margin-bottom: 10px;
+}
+
+.perk {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 2px;
+}
+
+.perkDescription {
+    padding-left: 10px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: #FFFFFF;
+}
+
+.button {
+    background: #BCFF1E;
+    border-radius: 48px;
+    height: 40px;
+    margin-top: auto;
+}
+

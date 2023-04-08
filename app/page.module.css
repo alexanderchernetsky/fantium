@@ -1,8 +1,66 @@
 .main {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
   background-color: #0F0F0F;
   min-height: 100vh;
+  width: 100%;
+  border-top: 1px solid #0F0F0F;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #0F0F0F;
+  margin: 50px auto 0 auto;
+  max-width: 1034px;
+}
+
+.cardsWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.remaining {
+  text-align: center;
+  color: #FFFFFF;
+  opacity: 0.5;
+  font-size: 14px;
+}
+
+.linkWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  cursor: pointer;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.linkText {
+  color: #FFFFFF;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+  .contentWrapper {
+    margin-top: 20px;
+  }
+
+  .cardsWrapper {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .plan {
+    margin-bottom: 20px;
+  }
+
+  .linkWrapper {
+    justify-content: center;
+  }
 }

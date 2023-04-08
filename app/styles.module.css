@@ -4,7 +4,7 @@
     flex-direction: column;
     width: 320px;
     height: 744px;
-    margin: 15px;
+    margin-bottom: 15px;
 }
 
 .topSection {
@@ -91,5 +91,6 @@
     border-radius: 48px;
     height: 40px;
     margin-top: auto;
+    cursor: pointer;
 }
 

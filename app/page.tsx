@@ -1,6 +1,9 @@
+import Image from "next/image";
+
 import PlanCard from "@/app/PlanCard";
 
 import styles from './page.module.css';
+
 
 
 export enum PlanStatuses {
@@ -73,14 +76,30 @@ const mockCards: ICardData[] = [
 export default function Home() {
   return (
     <main className={styles.main}>
-      {mockCards.map(card => {
-        return (
-            <div className={styles.plan} key={card.id}>
-              <PlanCard {...card} />
-              <div className={styles.remaining}>{card.collections_remaining}</div>
-            </div>
-        )
-      })}
+      <div className={styles.contentWrapper}>
+        <section className={styles.cardsWrapper}>
+          {mockCards.map(card => {
+            return (
+                <div className={styles.plan} key={card.id}>
+                  <PlanCard {...card} />
+                  <div className={styles.remaining}>{card.collections_remaining} Tokens</div>
+                </div>
+            )
+          })}
+        </section>
+
+        <div className={styles.linkWrapper}>
+          <span className={styles.linkText}>Valuation method &nbsp;</span>
+          <Image
+              src='/icons/arrow.png'
+              alt='link arrow'
+              className={styles.image}
+              width={28}
+              height={28}
+              priority={false}
+          />
+        </div>
+      </div>
     </main>
   )
 }

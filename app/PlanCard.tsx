@@ -10,7 +10,7 @@ export default function PlanCard({plan, image, percentageOfOwnership, price, per
         <div className={styles.cardWrapper}>
             <div className={styles.topSection}>
                 <Image
-                    src={`/images/${image}`}
+                    src={`https://alex-chernetsky.imgix.net/${image}`}
                     alt={plan}
                     className={styles.image}
                     width={304}

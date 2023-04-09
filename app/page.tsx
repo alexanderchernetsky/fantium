@@ -6,31 +6,9 @@ import Image from "next/image";
 import Loading from "@/components/Loading/Loading";
 import Error from "@/components/Error/Error";
 import PlanCard from "@/components/PlanCard/PlanCard";
+import {ICardData} from "@/app/types";
 
 import styles from './page.module.css';
-
-
-export enum PlanStatuses {
-  Enabled = 'Enabled',
-  Disabled = 'Disabled'
-}
-
-export enum Plans {
-  Bronze = 'Bronze',
-  Silver = 'Silver',
-  Gold = 'Gold'
-}
-
-export interface ICardData {
-  id: number,
-  plan: Plans,
-  image: string,
-  percentageOfOwnership: number,
-  collections_remaining: number,
-  price: number,
-  perks: string[],
-  status: PlanStatuses
-}
 
 
 export default function Home() {

@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import {ICardData, Plans, PlanStatuses} from "@/app/page";
+import {ICardData, Plans, PlanStatuses} from "@/app/types";
 
 import styles from "./styles.module.css";
 

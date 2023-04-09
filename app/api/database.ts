@@ -8,7 +8,6 @@ interface IConfig {
     mysql_database: string
 }
 
-// todo: create another user (don't share root with anyone)
 const config: IConfig = {
     mysql_hostname: String(process.env.DB_HOSTNAME),
     mysql_port: Number(process.env.DB_PORT),

@@ -2,13 +2,14 @@ import Image from 'next/image'
 
 import {ICardData, Plans, PlanStatuses} from "@/app/page";
 
-import styles from "@/app/styles.module.css";
+import styles from "./styles.module.css";
 
 
 export default function PlanCard({plan, image, percentageOfOwnership, price, perks, status}: ICardData) {
     return (
         <div className={styles.cardWrapper}>
             <div className={styles.topSection}>
+                {/* use .env variable in the url */}
                 <Image
                     src={`https://alex-chernetsky.imgix.net/${image}`}
                     alt={plan}

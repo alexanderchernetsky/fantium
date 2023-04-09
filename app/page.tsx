@@ -10,7 +10,6 @@ import PlanCard from "@/components/PlanCard/PlanCard";
 import styles from './page.module.css';
 
 
-
 export enum PlanStatuses {
   Enabled = 'Enabled',
   Disabled = 'Disabled'
@@ -22,19 +21,14 @@ export enum Plans {
   Gold = 'Gold'
 }
 
-export interface Perk {
-  image: string,
-  description: string
-}
-
 export interface ICardData {
-  id: string,
+  id: number,
   plan: Plans,
   image: string,
   percentageOfOwnership: number,
   collections_remaining: number,
   price: number,
-  perks: Perk[],
+  perks: string[],
   status: PlanStatuses
 }
 

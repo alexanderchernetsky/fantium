@@ -8,6 +8,7 @@ interface IErrorProps {
 }
 
 const Error: React.FC<IErrorProps> = ({ isError, children }) => {
+  // todo: replace text with an error page containing some meaningful advice
   return (
     <React.Fragment>
       {isError ? (

@@ -9,9 +9,8 @@ export default function PlanCard({plan, image, percentageOfOwnership, price, per
     return (
         <div className={styles.cardWrapper}>
             <div className={styles.topSection}>
-                {/* use .env variable in the url */}
                 <Image
-                    src={`https://alex-chernetsky.imgix.net/${image}`}
+                    src={image}
                     alt={plan}
                     className={styles.image}
                     width={304}
@@ -36,7 +35,7 @@ export default function PlanCard({plan, image, percentageOfOwnership, price, per
                         <div className={styles.perk} key={index}>
                             <div className={styles.perkIcon}>
                                 <Image
-                                    src={`/icons/${perk.image}`}
+                                    src={`/icons/${index % 2 ? 'hand.png' : 'diamond.png'}`}
                                     alt={plan}
                                     className={styles.image}
                                     width={12}
@@ -44,7 +43,7 @@ export default function PlanCard({plan, image, percentageOfOwnership, price, per
                                     priority={false}
                                 />
                             </div>
-                            <span className={styles.perkDescription}>{perk.description}</span>
+                            <span className={styles.perkDescription}>{perk}</span>
                         </div>
                     )
                 })}
